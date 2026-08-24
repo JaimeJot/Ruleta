@@ -1,9 +1,16 @@
-RUleta PWA v2
+# Ruleta — versión instalable (PWA)
 
-Esta versión mantiene el fondo original DENTRO del HTML para que al abrir index.html
-desde el móvil no dependa de que el gestor de archivos encuentre background.jpeg.
+Esta carpeta contiene la ruleta preparada para instalarse como aplicación web (PWA).
 
-También incluye un ajuste responsive para que la ruleta completa quepa en móviles
-en vertical y en horizontal.
+Archivos principales:
+- `index.html`: entrada de la aplicación.
+- `background.jpeg`: fondo original.
+- `manifest.webmanifest`: configuración de instalación.
+- `service-worker.js`: permite cargar la aplicación sin conexión después de haberla visitado/instalado.
+- `icons/`: iconos de la aplicación.
 
-Para instalarla como aplicación PWA, publícala en una URL HTTPS.
+IMPORTANTE:
+Para que el navegador permita instalarla como aplicación, debe publicarse mediante HTTPS (por ejemplo, GitHub Pages).
+Abrir `index.html` directamente desde los archivos del teléfono sirve para probar la ruleta, pero no activa la instalación PWA.
+
+La ruleta original se mantiene en `ruleta.html`.
