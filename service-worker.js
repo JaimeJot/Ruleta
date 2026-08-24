@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ruleta-v2';
+const CACHE_NAME = 'ruleta-v3';
 const ARCHIVOS = ['./','./index.html','./ruleta.html','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png'];
 
 self.addEventListener('install', event => {

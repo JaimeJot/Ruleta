@@ -234,38 +234,39 @@ body {
 
 .modal-boton:active { transform: scale(0.96); }
 
-/* Ajuste para móviles en vertical: mantiene toda la ruleta dentro de la pantalla. */
+/* Ajuste para móviles: usa el lado menor de la pantalla para que la ruleta
+   siempre quede completa, tanto en vertical como en horizontal. */
 @media (max-width: 600px) {
   body {
-    gap: 8px;
-    padding: 8px;
-  }
-
-  .titulo {
-    font-size: clamp(18px, 6vw, 28px);
-  }
-
-  .marco {
-    width: min(86vw, 86dvh, 560px);
-    height: min(86vw, 86dvh, 560px);
-  }
-
-  .modal {
-    max-width: calc(100vw - 28px);
-    padding: 24px 28px;
-  }
-}
-
-/* En pantallas muy bajas, prioriza que la ruleta completa siga siendo visible. */
-@media (max-height: 500px) {
-  body {
-    gap: 4px;
+    gap: 6px;
     padding: 4px;
   }
 
   .marco {
-    width: min(86vw, 78dvh, 560px);
-    height: min(86vw, 78dvh, 560px);
+    width: min(90vmin, 560px);
+    height: min(90vmin, 560px);
+    flex: 0 0 auto;
+  }
+
+  .modal {
+    max-width: calc(100vw - 24px);
+    max-height: calc(100dvh - 24px);
+    overflow: auto;
+    padding: 20px 24px;
+  }
+}
+
+/* En horizontal aprovechamos la altura disponible sin cortar la ruleta. */
+@media (max-width: 900px) and (orientation: landscape) {
+  body {
+    justify-content: center;
+    gap: 2px;
+    padding: 2px;
+  }
+
+  .marco {
+    width: min(90vmin, 560px);
+    height: min(90vmin, 560px);
   }
 }
 
